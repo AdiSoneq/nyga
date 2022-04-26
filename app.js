@@ -1,9 +1,11 @@
 const path = require('path')
 const express = require('express')
 const { engine } = require('express-handlebars');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express()
+mongoose.connect('mongodb://localhost/todolist');
 
 app.use(express.static(path.join(__dirname, 'public')))
 
